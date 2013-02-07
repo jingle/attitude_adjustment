@@ -1,7 +1,7 @@
 10
 
 dir
-34427
+35509
 svn://svn.openwrt.org/openwrt/branches/attitude_adjustment/package/udev
 svn://svn.openwrt.org/openwrt
 
@@ -26,16 +26,13 @@ hcg
 
 3c298f89-4303-0410-b956-a3cf2f4a3e73
 
-patches
-dir
-
 Config.in
 file
 
 
 
 
-2012-11-26T22:31:21.000000Z
+2013-02-04T04:06:23.000000Z
 55c9c9908fde18f6b5abaadd43278d3f
 2011-08-25T10:49:29.640068Z
 28085
@@ -69,7 +66,7 @@ file
 
 
 
-2012-11-26T22:31:21.000000Z
+2013-02-04T04:06:23.000000Z
 bfa0960b598775d0d27bb40347553fa5
 2011-08-25T10:49:29.640068Z
 28085
@@ -96,4 +93,7 @@ has-props
 
 
 4709
+
+patches
+dir
 

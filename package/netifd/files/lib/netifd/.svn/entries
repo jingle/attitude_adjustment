@@ -1,15 +1,15 @@
 10
 
 dir
-34427
+35509
 svn://svn.openwrt.org/openwrt/branches/attitude_adjustment/package/netifd/files/lib/netifd
 svn://svn.openwrt.org/openwrt
 
 
 
-2012-11-05T19:47:15.650836Z
-34090
-jow
+2013-01-20T15:52:19.500814Z
+35254
+nbd
 
 
 
@@ -26,17 +26,20 @@ jow
 
 3c298f89-4303-0410-b956-a3cf2f4a3e73
 
+proto
+dir
+
 dhcp.script
 file
 
 
 
 
-2012-11-26T22:31:19.000000Z
-d6165a76a902f09155cc0c9732a8ed40
-2012-06-05T16:04:23.055438Z
-32062
-jow
+2013-02-04T04:06:29.000000Z
+1693935249ca21d6ee4b449e363eab81
+2012-12-15T17:22:40.308680Z
+34706
+nbd
 has-props
 
 
@@ -58,8 +61,5 @@ has-props
 
 
 
-1332
-
-proto
-dir
+1392
 

@@ -462,7 +462,7 @@ enable_mac80211() {
 							# make sure this wifi interface won't accidentally stay open without encryption
 							ifconfig "$ifname" down
 						}
-						# wpa_supplicant will bring the iface up
+						mac80211_start_vif "$vif" "$ifname"
 						continue
 					fi
 				}
@@ -589,7 +589,7 @@ config wifi-iface
 	option device   radio$devidx
 	option network  lan
 	option mode     ap
-	option ssid     RS-NET
+	option ssid     OpenWrt
 	option encryption none
 	option wps_pushbutton '1'
 
