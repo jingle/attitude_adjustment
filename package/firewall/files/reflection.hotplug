@@ -26,11 +26,15 @@ if [ "$ACTION" = "add" ] && [ "$INTERFACE" = "wan" ]; then
 		find_networks_cb() {
 			local cfg="$1"
 			local zone="$2"
+			local need_masq="${3:-0}"
 
 			local name
 			config_get name "$cfg" name
 
-			[ "$name" = "$zone" ] && {
+			local masq
+			config_get_bool masq "$cfg" masq 0
+
+			[ "$name" = "$zone" ] && [ "$masq" -ge "$need_masq" ] && {
 				local network
 				config_get network "$cfg" network
 
@@ -39,7 +43,7 @@ if [ "$ACTION" = "add" ] && [ "$INTERFACE" = "wan" ]; then
 			}
 		}
 
-		config_foreach find_networks_cb zone "$1"
+		config_foreach find_networks_cb zone "$@"
 	}
 
 	setup_fwd() {
@@ -51,9 +55,15 @@ if [ "$ACTION" = "add" ] && [ "$INTERFACE" = "wan" ]; then
 
 		local src
 		config_get src "$cfg" src
+		[ "$src" == "$ZONE" ] || return
+
+		local dest
+		config_get dest "$cfg" dest
+		[ "$dest" != "*" ] || return
 
 		local target
 		config_get target "$cfg" target DNAT
+		[ "$target" = DNAT ] || return
 
 		[ "$src" = wan ] && [ "$target" = DNAT ] && {
 			local dest
@@ -128,5 +138,12 @@ if [ "$ACTION" = "add" ] && [ "$INTERFACE" = "wan" ]; then
 	}
 
 	config_load firewall
+
+	local is_masq_zone="$(find_networks "$ZONE" 1)"
+	[ -n "$is_masq_zone" ] || exit 0
+
+	local extip
+	network_get_ipaddr extip "$INTERFACE" || exit 0
+
 	config_foreach setup_fwd redirect
 fi

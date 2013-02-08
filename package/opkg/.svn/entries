@@ -1,14 +1,14 @@
 10
 
 dir
-34427
+35509
 svn://svn.openwrt.org/openwrt/branches/attitude_adjustment/package/opkg
 svn://svn.openwrt.org/openwrt
 
 
 
-2012-09-23T09:50:01.636378Z
-33523
+2013-01-03T20:03:14.072012Z
+35003
 nbd
 
 
@@ -26,23 +26,17 @@ nbd
 
 3c298f89-4303-0410-b956-a3cf2f4a3e73
 
-files
-dir
-
-patches
-dir
-
 Makefile
 file
 
 
 
 
-2012-11-26T22:31:16.000000Z
-caac8a5f3ef3c0ee7ae6d55da27ed59e
-2012-09-23T09:50:01.636378Z
-33523
-nbd
+2013-02-04T04:06:29.000000Z
+131d41c765d0696363949356fdacc0e7
+2012-12-18T20:53:47.199090Z
+34778
+jow
 
 
 
@@ -65,4 +59,10 @@ nbd
 
 
 2505
+
+files
+dir
+
+patches
+dir
 
