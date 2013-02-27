@@ -25,7 +25,7 @@
 
 #include "devices.h"
 
-#define HG255D_MTD_PARTITIONS	3  // 1 bootform 0x20000 ,2 bootform 0x40000,3 bootform 0x80000
+#define HG255D_MTD_PARTITIONS	1  // 1 bootform 0x20000 ,2 bootform 0x40000,3 bootform 0x80000
 /*
  Note:
  GPIO [6:3] is share with SPI interface,so,if use for gpio,must disable the SPI.
